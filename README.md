@@ -20,19 +20,21 @@ MASFI is a cloud-based machine learning framework for predicting current and alt
 - Forest disturbance and intactness maps
 - Percentage uncertainty maps
 - Area-specific AGBD and intactness statistics
-- Area-specifi sankey diagrams of AGBD disturbance
+- Area-specific sankey diagrams of AGBD disturbance
 
 ## Requirements
 
-- The project area must be within GEDI coverage (51.6°N to 51.6°S) and within the Tropical Moist Forest biome. The workflow can be adapted other spatial targets besides GEDI or different land-cover data, but this requires a little more proficiency with Python.
-- Google Account with at least 20 GB space. 1 TB can more realistically accomodate most project areas, with GEDI data  taking the majority of space. The total amount of space required for GEDI data will be indicated before downloading.
-- A familiarity with Python and Google Colab. The workflow is largely automated, but will require editing of some variables for different use-cases. A Colab subscription is not required but highly recommended for faster runtimes and higher RAM to accommodate larger project areas. The pro+ subscription will also allow background processing, so the user doesn't need to keep the browser window open.
+- A familiarity with Python and Google Colab. The workflow is largely automated, but will require editing of some variables for different use-cases.
+- Google Account with at least 20 GB Drive. ~100 GB - 2 TB is more realistic for most project areas, with GEDI downloads taking the majority of space. The total amount required for GEDI will be indicated before downloading.
+- A Colab subscription is not required but highly recommended for faster runtimes and higher RAM to accommodate larger project areas. The pro+ subscription will also allow background processing.
+- The project area should ideally be within GEDI coverage (51.6°N to 51.6°S) and the Tropical Moist Forest biome. The workflow can be adapted other spatial targets besides GEDI or different land-cover data, but this requires a little more proficiency with Python.
 
 ## Getting Started
 
-1. Download the notebooks and place in an empty Google Drive folder or Shared Drive
-2. Open the notebooks in Google Colab
-3. Follow the step-by-step instructions in each notebook
+1. Prepare a project area polygon as a .gpkg.
+2. Download the notebooks and place in an empty Google Drive folder or Shared Drive.
+3. Open the notebooks in Google Colab.
+4. Follow the step-by-step instructions in each notebook.
 
 ## Citation
 
@@ -41,8 +43,4 @@ Kelly, J., Clements, G. R., Ong, D.J., Rao, S., Low, R., Senescall, M. & Jinggut
 
 ## Support
 
-For questions and support, please open an issue in this repository.
-
-You can also contact the corresponding author at joekelly2119@gmail.com.
-
-January - April 2025 is a sabbatical period, so responses might be slow in this time.
+For questions and support, please open an issue in this repository or contact the corresponding author at joekelly2119@gmail.com. Responses might be slow January - April 2025 due to sabbatical.
