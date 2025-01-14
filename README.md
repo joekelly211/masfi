@@ -1,6 +1,6 @@
 # MASFI: Mapping Alternate Scenarios of Forest Intactness
 
-MASFI is a cloud-based machine learning framework for predicting current and alternate scenarios of aboveground biomass density (AGBD). The framework uses XGBoost regression and remote sensing data such as GEDI LiDAR to create high-resolution maps and statistics, supporting protected area planning and forest management.
+MASFI is a cloud-based machine learning framework for predicting current and alternate scenarios of aboveground biomass density (AGBD). The framework uses XGBoost regression and remote sensing data such as GEDI LiDAR to create high-resolution maps and statistics, supporting protected area planning and management.
 
 ## Framework Components
 
