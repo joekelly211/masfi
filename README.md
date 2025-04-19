@@ -43,4 +43,4 @@ Kelly, J., Clements, G. R., Ong, D.J., Rao, S., Low, R., Senescall, M. & Jinggut
 
 ## Support
 
-For questions and support please open a discussion. Responses might be slow January - April 2025 due to sabbatical.
+Please start a 'discussion'.
