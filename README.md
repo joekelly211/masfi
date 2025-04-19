@@ -44,3 +44,7 @@ Kelly, J., Clements, G. R., Ong, D.J., Rao, S., Low, R., Senescall, M. & Jinggut
 ## Support
 
 Please start a 'discussion'.
+
+## Future work
+
+Additional tools with functions such as 'business as usual' forecasting, support for additional biomes, geohazard predictions and vegetation structure classification are currently under development. MASFI will continue to be supported, and eventually worked into a larger software suite for protected area prioritisation and management.
