@@ -9,11 +9,11 @@ A cloud-based machine learning framework. MASFI supports protected area planning
 - 3_features_lcluc: Feature download and engineering for land-cover-land-use-change.
 - 3_features_topo: Feature engineering for topographic metrics.
 - 4_datasets: Spatial and temporal matching of targets and features.
-- 5_models: XGBoost model optimisation and validation, with SHAP feature interpretation.
-- 6_scenarios: Historic and alternate scenario creation with simple prediction outputs.
-- 7_uncertainty: Scenario prediction using a multi-model Monte Carlo approach, including outputs of mean and uncertainty.
-- 8_differences: Calculations of disturbance and intactness using differences between scenarios.
-- 9_statistics: Area-based statistics, with Sankey diagrams visualising changes attributable to disturbance.
+- 5_models: XGBoost model optimisation and validation, with SHAP feature interpretation
+- 6_scenarios: Historic and alternate scenario creation with simple prediction outputs
+- 7_uncertainty: Scenario prediction using a multi-model Monte Carlo approach, with outputs including mean and uncertainty
+- 8_differences: Calculations of disturbance and intactness using differences between scenarios
+- 9_statistics: Area-based statistics using uploaded polygons, with Sankey diagrams visualising changes attributable to disturbance.
 
 ## Requirements
 
@@ -26,8 +26,16 @@ A cloud-based machine learning framework. MASFI supports protected area planning
 
 1. Prepare a project area polygon as a .gpkg.
 2. Download the notebooks and place in an empty Google Drive folder or Shared Drive.
-3. Open the notebooks in Google Colab.
-4. Follow the step-by-step instructions in each notebook. If these are found lacking, please open a discussion.
+3. Open the notebooks in Google Colab, starting with 1_areas, running code blocks sequentially.
+4. Instructions and explanations are written as # comments. If these are found lacking, please open a discussion.
+
+Notebooks should be followed in order. The exception is if wish to predict a GEDI DTM (Digital Terrain Model) to create topographic features:
+1. Ensure 'elev_lowestmode' parameter from GEDI04_A is added in 2_targets.
+2. Use 3_features_topo to create topographic features with the base GLO-30 DEM (actually a DSM - Digital Surface Model).
+3. Include the same LCLUC features (< 2016, the GLO-30 data collection period) you would to model vegetation indices. The difference between the DTM and DSM is largely canopy height.
+4. Run through 4_datasets, 5_models and 6_scenarios, predicting the year 2015. Masking to forest isn't necessary.
+5. Go back to 3_features_topo and switch to the newly created GEDI DTM (unmasked) for new topographic features.
+6. Continue the workflow to 4_datasets for predicting GEDI AGBD or other vegetation indices.
 
 ## Future work
 
