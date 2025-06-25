@@ -39,9 +39,9 @@ Notebooks should be followed in order. The exception is if wish to predict a GED
 
 ## Future work
 
-Additional tools with functions such as 'business as usual' forecasting, support for additional biomes, geohazard predictions and vegetation structure classification are currently under development. MASFI will continue to be supported, and if funding and time permits, worked into a larger software suite for protected area prioritisation and management.
+Additional tools with functions such as disturbance pattern forecasting, support for additional biomes, geohazard predictions and vegetation structure classification are being considered or actively developed. MASFI will continue to be supported, and if funding and time permits, worked into a larger software suite for protected area prioritisation, monitoring and management.
 
 ## Citation
 
 If you use MASFI in your research, please cite:
-Kelly, J., Clements, G. R., Ong, D.J., Low, R., Senescall, M., Zeng, Y.W., Rao, S., & Jinggut, T. (2025). Mapping alternate scenarios of forest intactness: a machine learning framework. https://github.com/joekelly211/masfi
+Kelly, J., Clements, G. R., Ong, D.J., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2025). Mapping alternate scenarios of forest intactness: a machine learning framework. https://github.com/joekelly211/masfi
