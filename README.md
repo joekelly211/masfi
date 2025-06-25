@@ -4,16 +4,16 @@ A cloud-based machine learning framework. MASFI supports protected area planning
 
 ## Framework Components
 
-1_areas: Project area delineation, with raster template creation based on Copernicus GLO-30 DEM.
-2_targets: GEDI data download, processing and quality filtering, with support for user data upload.
-3_features_lcluc: Feature download and engineering for land-cover-land-use-change.
-3_features_topo: Feature engineering for topographic metrics.
-4_datasets: Spatial and temporal matching of targets and features.
-5_models: XGBoost model optimisation and validation, with SHAP feature interpretation
-6_scenarios: Historic and alternate scenario creation with simple prediction outputs
-7_uncertainty: Scenario prediction using a multi-model Monte Carlo approach, with outputs including mean and uncertainty
-8_differences: Calculations of disturbance and intactness using differences between scenarios
-9_statistics: Area-based statistics using uploaded polygons, with Sankey diagrams visualising changes attributable to disturbance.
+- 1_areas: Project area delineation, with raster template creation based on Copernicus GLO-30 DEM.
+- 2_targets: GEDI data download, processing and quality filtering, with support for user data upload.
+- 3_features_lcluc: Feature download and engineering for land-cover-land-use-change.
+- 3_features_topo: Feature engineering for topographic metrics.
+- 4_datasets: Spatial and temporal matching of targets and features.
+- 5_models: XGBoost model optimisation and validation, with SHAP feature interpretation
+- 6_scenarios: Historic and alternate scenario creation with simple prediction outputs
+- 7_uncertainty: Scenario prediction using a multi-model Monte Carlo approach, with outputs including mean and uncertainty
+- 8_differences: Calculations of disturbance and intactness using differences between scenarios
+- 9_statistics: Area-based statistics using uploaded polygons, with Sankey diagrams visualising changes attributable to disturbance.
 
 ## Requirements
 
