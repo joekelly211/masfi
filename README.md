@@ -1,4 +1,4 @@
-# MASFI: Mapping Alternate Scenarios of Forest Intactness
+# MASFI: Mapping Alternative Scenarios of Forest Intactness
 
 A cloud-based machine learning framework. MASFI supports protected area planning, monitoring and management using remote sensing data such as GEDI LiDAR aboveground biomass density.
 
@@ -10,7 +10,7 @@ A cloud-based machine learning framework. MASFI supports protected area planning
 - 3_features_topo: Feature engineering for topographic metrics.
 - 4_datasets: Spatial and temporal matching of targets and features.
 - 5_models: XGBoost model optimisation and validation, with SHAP feature interpretation
-- 6_scenarios: Historic and alternate scenario creation with simple prediction outputs
+- 6_scenarios: Historic and alternative scenario creation with simple prediction outputs
 - 7_uncertainty: Scenario prediction using a multi-model Monte Carlo approach, with outputs including mean and uncertainty
 - 8_differences: Calculations of disturbance and intactness using differences between scenarios
 - 9_statistics: Area-based statistics using uploaded polygons, with Sankey diagrams visualising changes attributable to disturbance.
@@ -44,4 +44,4 @@ Additional tools with functions such as disturbance pattern forecasting, support
 ## Citation
 
 If you use MASFI in your research, please cite:
-Kelly, J., Clements, G. R., Ong, D.J., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2025). Mapping alternate scenarios of forest intactness: a machine learning framework. https://github.com/joekelly211/masfi
+Kelly, J., Clements, G. R., Ong, D.J., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2025). Mapping alternative scenarios of forest intactness: a machine learning framework. https://github.com/joekelly211/masfi
