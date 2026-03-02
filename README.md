@@ -1,47 +1,46 @@
 # MASFI: Mapping Alternative Scenarios of Forest Intactness
 
-A cloud-based machine learning framework. MASFI supports protected area planning, monitoring and management using remote sensing data such as GEDI LiDAR aboveground biomass density.
+A cloud-based machine learning framework for predicting actual and alternative aboveground biomass density (AGBD) at 30 m resolution. MASFI uses GEDI L4A footprints, XGBoost regression and features engineered from the JRC Tropical Moist Forest product to quantify forest disturbance, restoration potential and relative intactness with IPCC-compliant uncertainty estimates. Outputs support protected area delineation, monitoring and management — the framework informed the gazettement of the Al-Sultan Abdullah Royal Tiger Reserve in Pahang, Malaysia.
 
 ## Framework Components
 
-- 1_areas: Project area delineation, with raster template creation based on Copernicus GLO-30 DEM.
-- 2_targets: GEDI data download, processing and quality filtering, with support for user data upload.
-- 3_features_lcluc: Feature download and engineering for land-cover-land-use-change.
-- 3_features_topo: Feature engineering for topographic metrics.
-- 4_datasets: Spatial and temporal matching of targets and features.
-- 5_models: XGBoost model optimisation and validation, with SHAP feature interpretation
-- 6_scenarios: Historic and alternative scenario creation with simple prediction outputs
-- 7_uncertainty: Scenario prediction using a multi-model Monte Carlo approach, with outputs including mean and uncertainty
-- 8_differences: Calculations of disturbance and intactness using differences between scenarios
-- 9_statistics: Area-based statistics using uploaded polygons, with Sankey diagrams visualising changes attributable to disturbance.
+- **1_areas**: Project area delineation and raster template creation from the Copernicus GLO-30 DEM, including pixel area calculation on the WGS84 ellipsoid.
+- **2_targets**: GEDI L4A download via NASA CMR API, quality filtering (sensitivity ≥ 0.98, quality flag = 1), and extraction of AGBD with standard error. Also supports user data upload.
+- **3_features_lcluc**: Download and engineering of scenario features from the TMF annual classification and disturbance products. Binary rasters are converted to edge distance and local density metrics within a 120 m ecological threshold. Old-growth proxy and forest reserve polygons are rasterised similarly.
+- **3_features_topo**: Engineering of static topographic features from a Digital Terrain Model, including 24 metrics (slope, topographic position index, stream power index, etc.) in smoothed and unsmoothed variants. Geographic features (latitude, longitude, distance to coast) are also created here.
+- **4_datasets**: Spatial and temporal matching of GEDI footprints with feature rasters. Footprints are filtered where same-year land cover change occurred within 34.5 m, and matched to a 29-year window of scenario features.
+- **5_models**: XGBoost hyperparameter optimisation using a custom SHAP-guided random search, ten-fold cross-validation, and SHAP feature interpretation. Supports multi-runtime parallel optimisation in Colab.
+- **6_scenarios**: Compilation of feature stacks for yearly, undisturbed, disturbance area and recovery scenarios. Scenario features are modified to simulate alternative states while static features remain unchanged.
+- **7_uncertainty**: 100-iteration Monte Carlo simulation propagating GEDI L4A standard error through model training to pixel-level 95% confidence intervals (IPCC Approach 2).
+- **8_differences**: Disturbance and restoration potential from scenario differences, with uncertainty propagation (IPCC Approach 1). Percentage loss and quantile-based relative intactness scoring on a 0–10 scale.
+- **9_statistics**: Area-based aggregation of AGB, disturbance, restoration and intactness statistics by polygon, with Sankey diagrams and yearly trend plots.
 
 ## Requirements
 
-- A familiarity with Python, Google Colab and Google Drive. The workflow is largely automated, but will require editing of some variables for different use-cases.
-- Google Account with at least 20 GB Drive. ~100 GB - 2 TB is more realistic for most project areas, depending on spatial extent. GEDI downloads take the majority of the space, and the total amount required for will be indicated before downloads begin.
-- A Colab subscription is not required but highly recommended for faster runtimes and more RAM to accommodate larger project areas. The pro+ subscription will also allow background processing.
-- The project area should ideally be within GEDI coverage (51.6°N to 51.6°S) and the Tropical Moist Forest biome. The workflow can be adapted other spatial targets besides GEDI or different land-cover data for creating features, but this requires a little more proficiency with Python.
+- Familiarity with Python, Google Colab and Google Drive. The workflow is largely automated but requires editing of some variables for different use cases.
+- Google Account with at least 20 GB Drive. 100 GB – 2 TB is more realistic for most project areas, depending on spatial extent. GEDI downloads take the majority of the space, and the total required will be indicated before downloads begin.
+- A Colab subscription is not required but highly recommended for faster runtimes and more RAM to accommodate larger project areas. The Pro+ subscription also allows background processing.
+- The project area should be within GEDI coverage (51.6°N to 51.6°S) and ideally the tropical moist forest biome. The framework can be adapted to other biomes using equivalent forest cover and disturbance products, though modifications to target filtering and scenario design would be needed.
+- Old-growth or mature forest proxy polygons within or adjacent to the project area. Without these, the earliest available satellite baseline (e.g. 1996) can be used, with the understanding that pre-satellite degradation will be invisible and restoration potential underestimated.
 
 ## Getting Started
 
-1. Prepare a project area polygon as a .gpkg.
+1. Prepare a project area polygon as a .gpkg, along with any land-use polygons (old-growth protected areas, forest reserves, etc.).
 2. Download the notebooks and place in an empty Google Drive folder or Shared Drive.
 3. Open the notebooks in Google Colab, starting with 1_areas, running code blocks sequentially.
 4. Instructions and explanations are written as # comments. If these are found lacking, please open a discussion.
 
-Notebooks should be followed in order. The exception is if wish to predict a GEDI DTM (Digital Terrain Model) to create topographic features:
-1. Ensure 'elev_lowestmode' parameter from GEDI04_A is added in 2_targets.
-2. Use 3_features_topo to create topographic features with the base GLO-30 DEM (actually a DSM - Digital Surface Model).
-3. Include the same LCLUC features (< 2016, the GLO-30 data collection period) you would to model vegetation indices. The difference between the DTM and DSM is largely canopy height.
-4. Run through 4_datasets, 5_models and 6_scenarios, predicting the year 2015. Masking to forest isn't necessary.
-5. Go back to 3_features_topo and switch to the newly created GEDI DTM (unmasked) for new topographic features.
-6. Continue the workflow to 4_datasets for predicting GEDI AGBD or other vegetation indices.
+Notebooks should be followed in order. The exception is if you wish to predict a GEDI DTM (Digital Terrain Model) to replace the GLO-30 DSM for topographic features. The DSM embeds vegetation height, which confounds alternative scenario predictions when used as a static feature. The DTM workflow:
 
-## Future work
-
-Additional tools with functions such as disturbance pattern forecasting, support for additional biomes, geohazard predictions and vegetation structure classification are being considered or actively developed. MASFI will continue to be supported, and if funding and time permits, worked into a larger software suite for protected area prioritisation, monitoring and management.
+1. Add `elev_lowestmode` from GEDI L4A in 2_targets.
+2. Use 3_features_topo to create initial topographic features from the GLO-30 DSM.
+3. Include LCLUC features up to 2015 (the final year of TanDEM-X data acquisition). The difference between DSM and DTM is largely canopy height, so features and model architecture mirror the AGBD workflow.
+4. Run 4_datasets, 5_models and 6_scenarios, predicting a single unmasked raster.
+5. Return to 3_features_topo and switch to the DTM for new topographic features.
+6. Continue the main AGBD workflow from 4_datasets.
 
 ## Citation
 
 If you use MASFI in your research, please cite:
-Kelly, J., Clements, G. R., Ong, D.J., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2025). Mapping alternative scenarios of forest intactness: a machine learning framework. https://github.com/joekelly211/masfi
+
+Kelly, J., Ong, D.J., Clements, G.R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026). Mapping alternative scenarios of forest intactness: A cloud-based machine learning framework. *Remote Sensing of Environment*. https://github.com/joekelly211/masfi
