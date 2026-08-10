@@ -1,6 +1,6 @@
 # MASFI: Mapping Alternative Scenarios of Forest Intactness
 
-A cloud-based machine learning framework for predicting actual and alternative aboveground biomass density (AGBD) at 30 m resolution. MASFI uses GEDI L4A footprints, XGBoost regression and features engineered from the JRC Tropical Moist Forest product to quantify forest disturbance, restoration potential and relative intactness with IPCC-compliant uncertainty estimates. Outputs support protected area delineation, monitoring and management. This framework informed the gazettement of the Al-Sultan Abdullah Royal Tiger Reserve in Pahang, Malaysia.
+A cloud-based machine learning framework for predicting actual and alternative aboveground biomass density (AGBD) at 30 m resolution. MASFI uses GEDI L4A footprints, XGBoost regression and features engineered from the JRC Tropical Moist Forest product to quantify forest disturbance, restoration potential and relative intactness with IPCC-compliant uncertainty estimates. Outputs support protected area delineation, monitoring and management. This framework helped to inform the gazettement of the Al-Sultan Abdullah Royal Tiger Reserve in Pahang, Malaysia. Note that all parameters are currently set at values used this project area, in many cases making acceptable default values.
 
 ## Framework Components
 
@@ -27,8 +27,8 @@ A cloud-based machine learning framework for predicting actual and alternative a
 
 1. Prepare a project area polygon as a .gpkg, along with any land-use polygons (old-growth protected areas, management units, etc.).
 2. Download the notebooks and place in an empty Google Drive folder or Shared Drive (your base_dir).
-3. Open the notebooks in Google Colab and modify the base_dir code block at the top. Start with 1_areas and run code blocks sequentially. 
-5. Instructions and explanations are written as # comments. If these are found lacking, please open a discussion here or contact me at joe@oldgrowthlabs.com.
+3. Open the notebooks in Google Colab and modify the base_dir code block at the top. Start with 1_areas and run code blocks sequentially.
+4. Instructions and explanations are written as # comments. If these are found lacking, please open a discussion here or contact me at joe@oldgrowthlabs.com.
 
 Notebooks should be followed in order. The exception is if you wish to predict a GEDI DTM to replace the GLO-30 DSM for topographic features. The DSM embeds vegetation height, which confounds alternative scenario predictions when used as a static feature. The DTM workflow in brief:
 
@@ -42,6 +42,6 @@ Notebooks should be followed in order. The exception is if you wish to predict a
 
 ## Citation
 
-The framework's manuscript is currently under development. For now, if you use MASFI in your research, please cite:
+The framework's manuscript is currently under review. For now, if you use MASFI in your research, please cite:
 
 Kelly, J., Ong, D.J., Clements, G.R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026). Mapping alternative scenarios of forest intactness: A machine learning framework. https://github.com/joekelly211/masfi
