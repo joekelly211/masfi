@@ -1,6 +1,6 @@
 # MASFI: Mapping Alternative Scenarios of Forest Intactness
 
-A cloud-based machine learning framework for predicting actual and alternative aboveground biomass density (AGBD) at 30 m resolution. MASFI uses GEDI L4A footprints, XGBoost regression and features engineered from the JRC Tropical Moist Forest product to quantify forest disturbance, restoration potential and relative intactness with IPCC-compliant uncertainty estimates. Outputs support protected area delineation, monitoring and management. This framework helped to inform the gazettement of the Al-Sultan Abdullah Royal Tiger Reserve in Pahang, Malaysia. Note that all parameters are currently set at values used this project area, in many cases making acceptable default values.
+A cloud-based machine learning framework for predicting actual and alternative aboveground biomass density (AGBD) at 30 m resolution. MASFI uses GEDI L4A footprints, XGBoost regression and features engineered from the JRC Tropical Moist Forest product to quantify forest disturbance, restoration potential and relative intactness with IPCC-compliant uncertainty estimates. Outputs support protected area delineation, monitoring and management. This framework helped to inform the gazettement of the Al-Sultan Abdullah Royal Tiger Reserve in Pahang, Malaysia. Note that all parameters are currently set at values used this project area, which in most cases make acceptable default values.
 
 ## Framework Components
 
@@ -42,6 +42,10 @@ Notebooks should be followed in order. The exception is if you wish to predict a
 
 ## Citation
 
-The framework's manuscript is currently under review. For now, if you use MASFI in your research, please cite:
+Two associated articles are currently under review and available as preprints. One manuscript outlines the framework's application to the tiger reserve in Malaysia, providing a concise methods alongside implications for conservation and management:
+Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026b). Prioritising forest protection and restoration using alternative scenarios of intactness. SSRN Preprint. https://doi.org/10.2139/ssrn.7259344 
 
-Kelly, J., Ong, D.J., Clements, G.R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026). Mapping alternative scenarios of forest intactness: A machine learning framework. https://github.com/joekelly211/masfi
+While a co-submitted methods article provides an in-depth protocol with supporting equations and an expanded design rationale:
+Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026a). Mapping alternative scenarios of forest intactness: A machine learning framework. SSRN Preprint. ssrn.com/abstract=7269979
+
+Please cite the relevant publication(s) if you use MASFI in your work.
