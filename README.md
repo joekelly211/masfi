@@ -43,9 +43,11 @@ Notebooks should be followed in order. The exception is if you wish to predict a
 ## Citation
 
 Two associated articles are currently under review and available as preprints. One manuscript outlines the framework's application to the tiger reserve in Malaysia, providing a concise methods alongside implications for conservation and management:
-Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026b). Prioritising forest protection and restoration using alternative scenarios of intactness. SSRN Preprint. https://doi.org/10.2139/ssrn.7259344 
+
+Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026b). **Prioritising forest protection and restoration using alternative scenarios of intactness**. SSRN Preprint. [https://doi.org/10.2139/ssrn.7259344](https://doi.org/10.2139/ssrn.7259344)
 
 While a co-submitted methods article provides an in-depth protocol with supporting equations and an expanded design rationale:
-Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026a). Mapping alternative scenarios of forest intactness: A machine learning framework. SSRN Preprint. ssrn.com/abstract=7269979
+
+Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026a). **Mapping alternative scenarios of forest intactness: A machine learning framework**. SSRN Preprint. [ssrn.com/abstract=7269979](ssrn.com/abstract=7269979)
 
 Please cite the relevant publication(s) if you use MASFI in your work.
