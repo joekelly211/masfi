@@ -48,6 +48,6 @@ Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S
 
 While a co-submitted methods article provides an in-depth protocol with supporting equations and an expanded design rationale:
 
-Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026a). **Mapping alternative scenarios of forest intactness: A machine learning framework**. SSRN Preprint. [ssrn.com/abstract=7269979](ssrn.com/abstract=7269979)
+Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026a). **Mapping alternative scenarios of forest intactness: A machine learning framework**. SSRN Preprint. [https://ssrn.com/abstract=7269979](https://ssrn.com/abstract=7269979)
 
 Please cite the relevant publication(s) if you use MASFI in your work.
