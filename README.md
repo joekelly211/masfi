@@ -14,6 +14,7 @@ A cloud-based machine learning framework for predicting actual and alternative a
 - **7_predictions**: Predictions with multi-iteration Monte Carlo simulation propagating GEDI L4A standard error through model training to pixel-level 95% confidence intervals (IPCC Approach 2). Accuracy comparison with existing products.
 - **8_comparisons**: Disturbance, restoration potential and percentage loss from scenario differences with uncertainty propagation (IPCC Approach 1 for degradation and recovery, Approach 2 for percentage loss). Quantile-based relative intactness scoring percentage loss on a 1–10 scale.
 - **9_statistics**: Area-based aggregation of AGB, disturbance, restoration and intactness statistics by polygon, with Sankey diagrams and yearly trend plots.
+- - **manuscript_revision_tests**: Tests requested by reviewers after a manuscript submission to Journal of Environmental Management, e.g. spatial independence and old-growth proxy uncertainty.
 
 ## Requirements
 
