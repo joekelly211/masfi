@@ -26,7 +26,7 @@ A cloud-based machine learning framework for predicting actual and alternative a
 
 ## Getting Started
 
-1. Prepare a project area polygon as a .gpkg, along with any land-use polygons (old-growth protected areas, management units, etc.). Optionally a 'non_forest_biome' polygon of naturally non-forest areas, which 'undisturbed since old-growth' scenario will exclude from the forest extent.
+1. Prepare a project area polygon as a .gpkg, along with any land-use polygons (old-growth protected areas, management units, etc.). Optionally a 'non_forest_biome' polygon of naturally non-forest areas, which the 'undisturbed since old-growth' scenario will exclude from the forest extent.
 2. Download the notebooks and place in an empty Google Drive folder or Shared Drive (your base_dir).
 3. Open the notebooks in Google Colab and modify the base_dir code block at the top. Start with 1_areas and run code blocks sequentially.
 4. Instructions and explanations are written as # comments. If these are found lacking, please open a discussion here or contact me at joe@oldgrowthlabs.com.
