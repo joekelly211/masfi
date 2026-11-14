@@ -14,7 +14,7 @@ A cloud-based machine learning framework for predicting actual and alternative a
 - **7_predictions**: Predictions with multi-iteration Monte Carlo simulation propagating GEDI L4A standard error through model training to pixel-level 95% confidence intervals (IPCC Approach 2). Accuracy comparison with existing products.
 - **8_comparisons**: Disturbance, restoration potential and percentage loss from scenario differences with uncertainty propagation (IPCC Approach 1 for degradation and recovery, Approach 2 for percentage loss). Quantile-based relative intactness scoring of percentage loss on a 0–10 scale, from 0 (deforested) to 10 (intact, ≤5% loss by default).
 - **9_statistics**: Area-based aggregation of AGB, disturbance, restoration and intactness statistics by polygon, with Sankey diagrams and yearly trend plots.
-- - **manuscript_revision_tests**: Tests requested by reviewers after a manuscript submission to Journal of Environmental Management, e.g. spatial independence and old-growth proxy uncertainty.
+- **manuscript_revision_tests**: Tests requested by reviewers after a manuscript submission to Journal of Environmental Management, e.g. spatial independence and old-growth proxy uncertainty.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ A cloud-based machine learning framework for predicting actual and alternative a
 
 ## Getting Started
 
-1. Prepare a project area polygon as a .gpkg, along with any land-use polygons (old-growth protected areas, management units, etc.).
+1. Prepare a project area polygon as a .gpkg, along with any land-use polygons (old-growth protected areas, management units, etc.). Optionally a 'non_forest_biome' polygon of naturally non-forest areas, which 'undisturbed since old-growth' scenario will exclude from the forest extent.
 2. Download the notebooks and place in an empty Google Drive folder or Shared Drive (your base_dir).
 3. Open the notebooks in Google Colab and modify the base_dir code block at the top. Start with 1_areas and run code blocks sequentially.
 4. Instructions and explanations are written as # comments. If these are found lacking, please open a discussion here or contact me at joe@oldgrowthlabs.com.
@@ -36,18 +36,18 @@ Notebooks should be followed in order. The exception is if you wish to predict a
 1. Make sure GEDI L4A 'elev_lowestmode' is included as a parameter in 2_targets, as this will be used in place of 'agbd'.
 2. Use the same static features as the AGBD model, calculated using the GLO-30 DSM.
 3. Include LCLUC features up to 2015 (the final year of GLO-30's TanDEM-X data acquisition). The difference between DSM and DTM is largely canopy height, so features and model architecture mirror the AGBD workflow.
-4. Run 4_datasets, 5_models and 6_scenarios, predicting a single unmasked raster.
+4. Run 4_datasets, 5_models then 6_scenarios. A single, unmasked DTM raster is predicted in 6_scenarios, 7_predictions isn't needed.
 5. Return to 3b_features_static and switch from GLO-30 to the DTM, which will run through a few post-processing steps.
 6. Recalculate topographic features using the DTM in place of the GLO-30 DSM.
-7. Continue the main AGBD workflow from 4_datasets, selecting the DTM topographic features. Your model should now be less confounded by vegetation embedded in the topography metrics.
+7. Continue the main AGBD workflow from 4_datasets, selecting the DTM topographic features. Your model should now be less confounded by vegetation that was embedded in the DSM topographic features.
 
 ## Citation
 
-Two associated articles are currently under review and available as preprints. One manuscript outlines the framework's application to the tiger reserve in Malaysia, providing a concise methods alongside implications for conservation and management:
+Two associated articles are available as preprints. The first, accepted in the Journal of Environmental Management, focuses on the framework’s application to the delineation and management of Malaysia’s first tiger reserve:
 
 Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026b). **Prioritising forest protection and restoration using alternative scenarios of intactness**. SSRN Preprint. [https://doi.org/10.2139/ssrn.7259344](https://doi.org/10.2139/ssrn.7259344)
 
-While a co-submitted methods article provides an in-depth protocol with supporting equations and an expanded design rationale:
+A co-submitted methods article provides everything needed to reproduce and adapt the framework, with expanded design rationale:
 
 Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026a). **Mapping alternative scenarios of forest intactness: A machine learning framework**. SSRN Preprint. [https://ssrn.com/abstract=7269979](https://ssrn.com/abstract=7269979)
 
