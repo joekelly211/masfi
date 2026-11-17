@@ -43,9 +43,9 @@ Notebooks should be followed in order. The exception is if you wish to predict a
 
 ## Citation
 
-Two associated articles are available as preprints. The first, accepted in the Journal of Environmental Management, focuses on the framework’s application to the delineation and management of Malaysia’s first tiger reserve:
+Two associated articles are available as preprints. The first, in the Journal of Environmental Management, focuses on the framework’s application to the delineation and management of Malaysia’s first tiger reserve:
 
-Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026b). **Prioritising forest protection and restoration using alternative scenarios of intactness**. SSRN Preprint. [https://doi.org/10.2139/ssrn.7259344](https://doi.org/10.2139/ssrn.7259344)
+Kelly, J., Ong, D. J., Clements, G. R., Low, R., Senescall, M., Zeng, Y., Rao, S., & Jinggut, T. (2026b). **Prioritising forest protection and restoration using alternative scenarios of intactness**. Journal of Environmental Management, 420, 131331.[https://doi.org/10.2139/ssrn.7259344](https://doi.org/10.1016/j.jenvman.2026.131331)
 
 A co-submitted methods article provides everything needed to reproduce and adapt the framework, with expanded design rationale:
 
